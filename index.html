@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Upload to Azure Blob Storage</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    input[type="file"] {
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Upload Files to Azure Blob Storage</h1>
+  <form id="uploadForm">
+    <input type="file" id="fileInput" required />
+    <br />
+    <button type="submit">Upload</button>
+  </form>
+  <div id="status"></div>
+
+  <script src="upload.js"></script>
+</body>
+</html>
+
