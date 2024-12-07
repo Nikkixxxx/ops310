@@ -45,14 +45,21 @@
                 return;
             }
 
-            const formData = new FormData();
-            formData.append('file', file);
+            const sasToken = "sp=rwl&st=2024-12-07T20:46:55Z&se=2024-12-15T04:46:55Z&sv=2022-11-02&sr=c&sig=9ajEodX70Zc0wp4lykWSRirBCYlxClPjHbiz%2Bp5PYiE%3D";
+            const containerUrl = "https://ops310prj2nmagero.blob.core.windows.net/incoming-files";
 
+            const uploadUrl = `${containerUrl}/${file.name}?${sasToken}`;
+            
             try {
-                const response = await fetch('<YOUR_API_ENDPOINT>', {
-                    method: 'POST',
-                    body: formData,
+                const response = await fetch(uploadUrl, {
+                    method: 'PUT',
+                    headers: {
+                        'x-ms-blob-type': 'BlockBlob',
+                        'Content-Type': file.type,
+                    },
+                    body: file,
                 });
+            
 
                 if (response.ok) {
                     status.textContent = 'File uploaded successfully!';
