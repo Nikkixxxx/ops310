@@ -44,8 +44,7 @@
                 status.textContent = 'No file selected!';
                 return;
             }
-
-            const sasToken = "sp=rwl&st=2024-12-07T20:46:55Z&se=2024-12-15T04:46:55Z&sv=2022-11-02&sr=c&sig=9ajEodX70Zc0wp4lykWSRirBCYlxClPjHbiz%2Bp5PYiE%3D";
+            const sasToken = "sp=racw&st=2024-12-07T20:59:07Z&se=2024-12-08T04:59:07Z&sv=2022-11-02&sr=c&sig=T8DyRnkCBTIDzB5E9HBsT7Aq%2BOFpIYUorhjcrV0Htcc%3D";
             const containerUrl = "https://ops310prj2nmagero.blob.core.windows.net/incoming-files";
 
             const uploadUrl = `${containerUrl}/${file.name}?${sasToken}`;
